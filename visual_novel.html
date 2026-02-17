@@ -4,66 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FR-S vs S2000 | Visual Novel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#121a24;
-      --text:#e9eef6;
-      --muted:#a9b6c7;
-      --accent:#ff3b3b;
-      --accent2:#4dd6ff;
-      --border:rgba(255,255,255,.10);
-      --shadow:0 18px 55px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      background:radial-gradient(1000px 700px at 30% -20%, rgba(77,214,255,.18), transparent 60%),
-                 radial-gradient(1000px 700px at 80% 10%, rgba(255,59,59,.14), transparent 55%),
-                 var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(11,15,20,.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-    .bar{
-      max-width:1100px;
-      margin:0 auto;
-      padding:12px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 4px rgba(255,255,255,.06);
-    }
-    .bar a{
-      color:var(--text);
-      text-decoration:none;
-      opacity:.9;
-    }
-    .bar a:hover{opacity:1}
-    main{
-      max-width:1100px;
+    /* Visual novel page-specific layout. Navbar styling is shared via styles.css. */
+    .vn{
+      max-width:var(--max);
       margin:0 auto;
       padding:20px 18px 44px;
     }
@@ -71,7 +22,7 @@
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:28px;
-  margin-top:24px;
+      margin-top:24px;
       align-items:start;
     }
     @media (max-width: 900px){
@@ -116,10 +67,6 @@
     .content{
       padding:16px 16px 18px;
     }
-    h1,h2{
-      margin:0 0 10px;
-      line-height:1.2;
-    }
     .meta{
       color:var(--muted);
       font-size:.95rem;
@@ -131,48 +78,47 @@
       gap:10px;
       margin-top:14px;
     }
-    button{
+    .vn button{
       cursor:pointer;
       border:1px solid var(--border);
       background:rgba(255,255,255,.06);
       color:var(--text);
       padding:10px 12px;
       border-radius:12px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
       transition:transform .06s ease, background .15s ease, border-color .15s ease;
     }
-    button:hover{
+    .vn button:hover{
       background:rgba(255,255,255,.10);
       border-color:rgba(255,255,255,.22);
     }
-    button:active{transform:translateY(1px)}
-    .primary{
+    .vn button:active{transform:translateY(1px)}
+    .vn .primary{
       background:linear-gradient(135deg, rgba(255,59,59,.95), rgba(255,59,59,.55));
       border-color:rgba(255,59,59,.55);
     }
-    .primary:hover{
-      background:linear-gradient(135deg, rgba(255,59,59,1), rgba(255,59,59,.65));
+    .vn .primary:hover{
       border-color:rgba(255,59,59,.7);
     }
-    .alt{
+    .vn .alt{
       background:linear-gradient(135deg, rgba(77,214,255,.95), rgba(77,214,255,.45));
       border-color:rgba(77,214,255,.55);
       color:#041018;
     }
-    .alt:hover{
-      background:linear-gradient(135deg, rgba(77,214,255,1), rgba(77,214,255,.60));
+    .vn .alt:hover{
       border-color:rgba(77,214,255,.70);
     }
     .side{
-      padding:16px;
+      padding:0;
+      display:grid;
+      gap:18px;
     }
     .side .card{
       background:rgba(255,255,255,.03);
       border:1px solid var(--border);
       border-radius:14px;
       padding:18px;
-      margin-bottom:22px;
     }
     .k{
       font-size:.85rem;
@@ -181,51 +127,53 @@
     }
     .v{
       margin:0;
-      font-weight:700;
+      font-weight:800;
     }
     .tiny{
       font-size:.9rem;
       color:var(--muted);
       margin:0;
     }
-    .hidden{display:none}
-    footer{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 18px 30px;
-      color:var(--muted);
-      font-size:.9rem;
-    }
     .note{
       margin-top:12px;
       color:var(--muted);
       font-size:.92rem;
     }
+    .hidden{display:none}
     code{color:#bfe9ff}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="bar">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <a href="index.html">FR-S Story</a>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center;">
-        <a href="gallery.html">Gallery</a>
-        <a href="visual_novel.html">Visual Novel</a>
-      </div>
-    </div>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">FR-S Story</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History of the 86/FRS/BRZ platform</a></li>
+        <li><a href="passion.html">My Car Journey</a></li>
+        <li><a href="gallery.html">Gallery + Link Up</a></li>
+        <li><a class="active" href="visual_novel.html">Visual Novel</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
+  <main class="vn">
+    <section class="page-head frame">
+      <h1>FR-S vs S2000</h1>
+      <p class="lead">Interactive story with branching paths based on your choices.</p>
+    </section>
+
     <div class="wrap">
       <section class="panel" aria-live="polite">
         <div id="media" class="media"></div>
 
         <div class="content">
-          <h1 id="title">FR-S vs S2000</h1>
+          <h2 id="title">FR-S vs S2000</h2>
           <p id="text" class="meta"></p>
           <div id="choices" class="choices"></div>
           <p id="helper" class="note"></p>
@@ -237,25 +185,23 @@
           <p class="k">Current scene</p>
           <p id="sceneLabel" class="v">Pull-up</p>
         </div>
+
         <div class="card">
           <p class="k">Your rival</p>
           <p class="v">Black Honda S2000</p>
           <p class="tiny">Fast, loud, and confident on tight roads.</p>
         </div>
+
         <div class="card">
           <p class="k">Your car</p>
           <p class="v">2013 Scion FR-S</p>
           <p class="tiny">Lightweight, sharp, and ready to prove a point.</p>
         </div>
-        <div class="card">
-          <p class="k">Tip</p>
-          <p class="tiny">Keep all files in the same folder as this page: <code>pullup.png</code>, <code>start.png</code>, <code>fork.png</code>, <code>sideroad.png</code>, <code>jump.png</code>, <code>intowall.png</code>, <code>explosion.png</code>, <code>crash.png</code>, <code>donuts.png</code>, <code>win.png</code>, <code>boba.png</code>, <code>busted.png</code>, and <code>Overtake.mp4</code>.</p>
-        </div>
       </aside>
     </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>Interactive visual novel page. Branching paths are based on your choices.</p>
   </footer>
 
@@ -329,7 +275,7 @@
         label: "Pull-up",
         title: "Two cars. One tunnel. No backing down.",
         text: "You roll up in your FR-S and spot a black S2000 idling beside you. The driver glances over, smirks, and blips the throttle. The streetlights paint the road orange, and the air feels electric. You nod back. This is happening.",
-        media: { type:"image", src:"pullup.png", alt:"Your FR-S pulling up next to a black S2000" },
+        media: { type:"image", src:"media/pullup.png", alt:"Your FR-S pulling up next to a black S2000" },
         choices: [
           { label:"Next", to:"start1", kind:"primary" }
         ],
@@ -340,7 +286,7 @@
         label: "The launch",
         title: "Green light. Instant chaos.",
         text: "The moment the light flips, you both hook and go. Tires chirp, engines echo, and the S2000 jumps half a car ahead. You keep it tight, staying in the power band and waiting for the first break in the road.",
-        media: { type:"image", src:"start.png", alt:"The race begins on a dark road" },
+        media: { type:"image", src:"media/start.png", alt:"The race begins on a dark road" },
         choices: [
           { label:"Continue", to:"fork", kind:"primary" }
         ],
@@ -351,7 +297,7 @@
         label: "Fork",
         title: "A fork in the road appears.",
         text: "Ahead, the road splits. The right lane dives into a tunnel where the echo will swallow every mistake. The left lane peels into a narrow side road with less room, but maybe a cleaner line. The S2000 drifts toward the tunnel, daring you to follow.",
-        media: { type:"image", src:"fork.png", alt:"A fork in the road at night" },
+        media: { type:"image", src:"media/fork.png", alt:"A fork in the road at night" },
         choices: [
           { label:"Take the tunnel", to:"tunnel", kind:"primary" },
           { label:"Take the side road", to:"sideroad", kind:"alt" }
@@ -362,8 +308,8 @@
       sideroad: {
         label: "Side road",
         title: "You cut left and commit.",
-        text: "You flick the wheel and take the side road. The pavement gets rougher, the corners tighter, and the trees close in. The S2000 stays loud behind you, but you feel the FR-S settle as you carve through the first bend.",
-        media: { type:"image", src:"sideroad.png", alt:"A side road at night" },
+        text: "You flick the wheel and take the side road. The pavement gets rougher, the corners tighter, and the trees close in. The S2000 stays loud behind you disappearing into the tunnel, but you feel the FR-S settle as you carve through the rural overgrown roads.",
+        media: { type:"image", src:"media/sideroad.png", alt:"A side road at night" },
         choices: [
           { label:"Next", to:"jump", kind:"primary" }
         ],
@@ -373,12 +319,12 @@
       tunnel: {
         label: "Tunnel",
         title: "You follow into the tunnel.",
-        text: "You dive into the tunnel and the sound doubles, then triples. The S2000 moves wide, and you try to match the pace. The wall rushes closer than expected. A split second later, the car snaps toward the concrete.",
+        text: "You dive into the tunnel and the sound doubles, then triples. The S2000 moves wide, and you try to match the pace. The wall rushes closer than expected. A split second later, your opponent decides to play dirty and rams you into the sidewall.",
         media: {
           type:"stack",
           items: [
-            { src:"intowall.png", alt:"The car impacts the tunnel wall" },
-            { src:"explosion.png", alt:"An explosion erupts behind the car" }
+            { src:"media/intowall.png", alt:"The car impacts the tunnel wall" },
+            { src:"media/explosion.png", alt:"An explosion erupts behind the car" }
           ]
         },
         choices: [
@@ -391,7 +337,7 @@
         label: "Jump",
         title: "A crest. A weightless moment.",
         text: "The side road rises into a sharp crest. You keep your foot in it and the FR-S gets light. For a heartbeat, the world goes silent and the headlights float. You land clean and see the main road reconnect ahead.",
-        media: { type:"image", src:"jump.png", alt:"A dramatic jump on a night road" },
+        media: { type:"image", src:"media/jump.png", alt:"A dramatic jump on a night road" },
         choices: [
           { label:"Next", to:"start2", kind:"primary" }
         ],
@@ -402,7 +348,7 @@
         label: "Second wind",
         title: "You reel the S2000 back in.",
         text: "Back on the main stretch, the S2000 is still there, just ahead. You set up the next corner, knowing this is where you can make the pass. The braking zone is short and the apex is sharp. One clean move decides it.",
-        media: { type:"image", src:"start.png", alt:"Back on the main road as the race continues" },
+        media: { type:"image", src:"media/start.png", alt:"Back on the main road as the race continues" },
         choices: [
           { label:"Overtake outside", to:"overtake", kind:"alt" },
           { label:"Take inner apex", to:"inner", kind:"primary" }
@@ -414,7 +360,7 @@
         label: "Inner apex",
         title: "Too tight, too late.",
         text: "You dive inside, aiming for the perfect apex. The line is razor thin. The rear steps out just as the road tightens. You try to save it, but the corner is unforgiving. Metal and glass answer back.",
-        media: { type:"image", src:"crash.png", alt:"A crash after taking the inner apex" },
+        media: { type:"image", src:"media/crash.png", alt:"A crash after taking the inner apex" },
         choices: [
           { label:"Restart", to:"pullup", kind:"primary" }
         ],
@@ -425,11 +371,11 @@
         label: "Overtake",
         title: "Outside line, full commitment.",
         text: "You take the outside, stay calm, and let the FR-S rotate. The S2000 clamps the inside, but you keep speed and hold traction. Your headlights sweep past the S2000’s door. By corner exit, you are ahead and pulling.",
-        media: { type:"video", src:"Overtake.mp4", poster:"start.png" },
+        media: { type:"video", src:"media/Overtake.mp4", poster:"media/start.png" },
         choices: [
           { label:"Next", to:"ahead", kind:"primary" }
         ],
-        helper: "If the video does not play, confirm the file name is exactly Overtake.mp4 in the same folder."
+        helper: "If the video does not play, confirm the file is named Overtake.mp4 in media/."
       },
 
       ahead: {
@@ -447,8 +393,8 @@
       donuts: {
         label: "Donuts",
         title: "One more show, one more risk.",
-        text: "You swing into an open spot and light up the rear tires. Smoke blooms and the engine howls. It feels legendary for about two seconds. Then the red and blue lights flip the night into a warning.",
-        media: { type:"image", src:"donuts.png", alt:"Doing donuts and kicking up smoke" },
+        text: "You swing into an open spot and light up the rear tires. Smoke blooms and the engine howls. It feels legendary for about two seconds. Then the red and blues light you from behind; you got caught being cocky.",
+        media: { type:"image", src:"media/donuts.png", alt:"Doing donuts and kicking up smoke" },
         choices: [
           { label:"Uh oh…", to:"busted", kind:"primary" }
         ],
@@ -459,7 +405,7 @@
         label: "Busted",
         title: "BUSTED.",
         text: "The celebration was loud enough to invite trouble. A patrol car rolls in and the story ends with paperwork, tow hooks, and regret. The S2000 never even has to catch you. The lights already did.",
-        media: { type:"image", src:"busted.png", alt:"Police lights and the word BUSTED" },
+        media: { type:"image", src:"media/busted.png", alt:"Police lights and the word BUSTED" },
         choices: [
           { label:"Restart", to:"pullup", kind:"primary" }
         ],
@@ -473,18 +419,17 @@
         media: {
           type:"stack",
           items: [
-            { src:"win.png", alt:"Winner banner over the FR-S" },
-            { src:"boba.png", alt:"Cars parked at a boba shop at sunset" }
+            { src:"media/win.png", alt:"Winner banner over the FR-S" },
+            { src:"media/boba.png", alt:"Cars parked at a boba shop at sunset" }
           ]
         },
         choices: [
           { label:"Play again", to:"pullup", kind:"primary" }
         ],
-        helper: "Victory tastes like boba."
+        helper: "Victory tastes like matcha milk tea boba. You sip and enjoy your drink chilling for the rest of the night"
       }
     };
 
-    // Load scene from URL hash if present
     const hash = (window.location.hash || "").replace("#", "");
     setScene(hash && scenes[hash] ? hash : "pullup");
   </script>

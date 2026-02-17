@@ -1,10 +1,10 @@
-<!-- gallery.html -->
+<!-- gallery.html (combined JS + no-JS gallery) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My 2013 Scion FR-S | Gallery </title>
+  <title>My 2013 Scion FR-S | Gallery</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +14,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <nav class="navbar" aria-label="Primary">
       <a class="brand" href="index.html">
@@ -25,91 +27,178 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="history.html">History of the 86/FRS/BRZ platform</a></li>
         <li><a href="passion.html">My Car Journey</a></li>
-        <li><a class="active" href="gallery.html">Gallery + Form</a></li>
+        <li><a class="active" href="gallery.html">Gallery + Link Up</a></li>
         <li><a href="visual_novel.html">Visual Novel</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="page">
+  <main id="main" class="page">
     <section class="page-head frame">
       <h1>Gallery</h1>
-      <p class="lead">
-        Click to view my car's photo gallery.
-      </p>
+      <p class="lead">Click to view my car's photo gallery.</p>
+      <p class="muted">All images are loaded from the <code>media/</code> folder.</p>
     </section>
 
     <section class="deck-wrap frame" aria-label="Gallery deck">
-      <button id="deckButton" class="deck" type="button" aria-label="Open your photo deck">
-        <div class="deck-stack" aria-hidden="true">
-          <div class="deck-card deck-card-3"></div>
-          <div class="deck-card deck-card-2"></div>
-          <div class="deck-card deck-card-1"></div>
-        </div>
-
+      <button id="deckButton" class="deck" type="button" aria-haspopup="dialog" aria-controls="galleryModal">
         <div class="deck-preview">
           <div class="deck-thumb frame" id="deckThumb" aria-hidden="true"></div>
           <div class="deck-meta">
             <p class="deck-title">My FR-S Gallery</p>
-            <p class="deck-sub muted">
-              <span id="photoCount">0</span> photos saved
-            </p>
+            <p class="deck-sub muted"><span id="photoCount">0</span> photos</p>
             <p class="micro">Click to view all</p>
           </div>
         </div>
       </button>
+
+      <noscript>
+        <div class="card frame" style="margin-top:16px;">
+          <h2>No-JS gallery</h2>
+          <p class="muted">Clicking an image will open it in a new tab.</p>
+
+          <section class="gallery" aria-label="Photo gallery">
+<figure class="shot frame">
+          <a href="media/IMG_0480.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_0480.jpg" alt="Red FR-S photo 1" loading="lazy" />
+          </a>
+          <figcaption>Photo 1</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_1431.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_1431.jpg" alt="Red FR-S photo 2" loading="lazy" />
+          </a>
+          <figcaption>Photo 2</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_4487.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_4487.jpg" alt="Red FR-S photo 3" loading="lazy" />
+          </a>
+          <figcaption>Photo 3</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_8228.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_8228.jpg" alt="Red FR-S photo 4" loading="lazy" />
+          </a>
+          <figcaption>Photo 4</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_8215.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_8215.jpg" alt="Red FR-S photo 5" loading="lazy" />
+          </a>
+          <figcaption>Photo 5</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_7025.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_7025.jpg" alt="Red FR-S photo 6" loading="lazy" />
+          </a>
+          <figcaption>Photo 6</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_7179.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_7179.jpg" alt="Red FR-S photo 7" loading="lazy" />
+          </a>
+          <figcaption>Photo 7</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_8792.jpg" target="_blank" rel="noopener">
+            <img src="media/IMG_8792.jpg" alt="Red FR-S photo 8" loading="lazy" />
+          </a>
+          <figcaption>Photo 8</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_5635.png" target="_blank" rel="noopener">
+            <img src="media/IMG_5635.png" alt="FR-S screenshot 1" loading="lazy" />
+          </a>
+          <figcaption>Screenshot 1</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_7615.png" target="_blank" rel="noopener">
+            <img src="media/IMG_7615.png" alt="FR-S screenshot 2" loading="lazy" />
+          </a>
+          <figcaption>Screenshot 2</figcaption>
+        </figure>
+        <figure class="shot frame">
+          <a href="media/IMG_8324.png" target="_blank" rel="noopener">
+            <img src="media/IMG_8324.png" alt="FR-S screenshot 3" loading="lazy" />
+          </a>
+          <figcaption>Screenshot 3</figcaption>
+        </figure>
+          </section>
+        </div>
+      </noscript>
     </section>
 
-    <!-- Form section -->
+    
     <section class="card frame">
-      <h2>Meet planner + photo upload</h2>
-      <p class="muted">
-        Pick a date for the next meet. Upload photos and they will appear in your gallery deck.
-        This saves on this browser using local storage.
-      </p>
+      <h2>Upload car photos</h2>
+      <p class="muted">Upload photos to add them to your gallery on this device (saved in local storage).</p>
 
-      <form class="form" id="meetForm" action="#" method="post">
+      <div class="form">
         <div class="form-row">
-          <label for="meet-date">Next car meet date</label>
-          <input id="meet-date" name="meet-date" type="date" />
-          <p class="micro">Your selected date will be remembered on this device.</p>
-        </div>
-
-        <div class="form-row">
-          <label for="photo-upload">Upload car photos</label>
-          <input id="photo-upload" name="photo-upload" type="file" accept="image/*" multiple />
+          <label for="photoUpload">Choose photos</label>
+          <input id="photoUpload" type="file" accept="image/*" multiple />
           <p class="micro">Tip: hold Ctrl or Cmd to select multiple images.</p>
         </div>
 
-        <div class="form-row checkbox-row">
-          <input id="notify" name="notify" type="checkbox" />
-          <label for="notify">Remind me on the day (visual reminder only)</label>
+        <div class="form-actions">
+          <button class="btn ghost" id="clearUploads" type="button">Clear uploaded photos</button>
+        </div>
+
+        <p class="micro" id="uploadStatus" aria-live="polite"></p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="margin-bottom:10px;">Uploaded photos</h3>
+        <div id="uploadsList" class="gallery" aria-label="Uploaded photos"></div>
+      </div>
+    </section>
+
+<section class="card frame">
+      <h2>Link up planner</h2>
+      <p class="muted">Create a plan, save it on this device, and see it listed below.</p>
+
+      <form class="form" id="linkUpForm" action="#" method="post">
+        <div class="form-row">
+          <label for="linkup-dt">Date and time</label>
+          <input id="linkup-dt" name="linkup-dt" type="datetime-local" required />
+          <p class="micro">Saved using local storage (this browser only).</p>
+        </div>
+
+        <div class="form-row">
+          <span style="display:block;font-weight:800;margin-bottom:8px;">What are we doing?</span>
+          <div class="checkbox-grid" role="group" aria-label="Link-up activities">
+            <label class="check"><input type="checkbox" name="activity" value="cruise" /> Cruise</label>
+            <label class="check"><input type="checkbox" name="activity" value="food" /> Food</label>
+            <label class="check"><input type="checkbox" name="activity" value="boba" /> Boba</label>
+            <label class="check"><input type="checkbox" name="activity" value="meetup" /> Meetup</label>
+            <label class="check"><input type="checkbox" name="activity" value="car show" /> Car show</label>
+            <label class="check"><input type="checkbox" name="activity" value="touge" /> Touge</label>
+          </div>
         </div>
 
         <div class="form-actions">
-          <button class="btn primary" type="submit" aria-label="Save meet date">
-            Save meet date
-          </button>
-          <button class="btn ghost" id="clearUploads" type="button" aria-label="Clear uploaded photos">
-            Clear uploaded photos
-          </button>
+          <button class="btn primary" type="submit">Save link up</button>
+          <button class="btn ghost" id="clearPlans" type="button">Clear saved link ups</button>
         </div>
 
-        <p class="micro" id="statusMsg" aria-live="polite"></p>
+        <p class="micro" id="planStatus" aria-live="polite"></p>
       </form>
+
+      <div style="margin-top:16px;">
+        <h3 style="margin-bottom:10px;">Saved link ups</h3>
+        <div id="plansList" style="display:grid;gap:12px;"></div>
+      </div>
     </section>
   </main>
 
-  <!-- Modal that opens to show all photos -->
   <div class="modal" id="galleryModal" aria-hidden="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
 
     <div class="modal-panel frame" role="dialog" aria-modal="true" aria-label="Full gallery">
       <div class="modal-head">
         <h2 class="modal-title">All photos</h2>
-        <button class="btn ghost modal-close" id="modalClose" type="button" aria-label="Close gallery">
-          Close
-        </button>
+        <button class="btn ghost modal-close" id="modalClose" type="button">Close</button>
       </div>
 
       <div class="modal-tools">
@@ -123,9 +212,7 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-panel frame" role="dialog" aria-modal="true" aria-label="Photo viewer">
-      <button class="btn ghost lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">
-        Close
-      </button>
+      <button class="btn ghost lightbox-close" id="lightboxClose" type="button">Close</button>
       <img id="lightboxImg" alt="Selected gallery photo" />
     </div>
   </div>
@@ -134,6 +221,407 @@
     <p>Comp 484 • Project 1 • My Car &lt;3</p>
   </footer>
 
-  <script src="script.js"></script>
+  
+  <script>
+    "use strict";
+
+    // Base photos shipped with the site
+    const BASE_PHOTOS = [
+      { src:"media/IMG_0480.jpg", caption:"Photo 1", alt:"Red FR-S photo 1" },
+      { src:"media/IMG_1431.jpg", caption:"Photo 2", alt:"Red FR-S photo 2" },
+      { src:"media/IMG_4487.jpg", caption:"Photo 3", alt:"Red FR-S photo 3" },
+      { src:"media/IMG_8228.jpg", caption:"Photo 4", alt:"Red FR-S photo 4" },
+      { src:"media/IMG_8215.jpg", caption:"Photo 5", alt:"Red FR-S photo 5" },
+      { src:"media/IMG_7025.jpg", caption:"Photo 6", alt:"Red FR-S photo 6" },
+      { src:"media/IMG_7179.jpg", caption:"Photo 7", alt:"Red FR-S photo 7" },
+      { src:"media/IMG_8792.jpg", caption:"Photo 8", alt:"Red FR-S photo 8" },
+      { src:"media/IMG_5635.png", caption:"Screenshot 1", alt:"FR-S screenshot 1" },
+      { src:"media/IMG_7615.png", caption:"Screenshot 2", alt:"FR-S screenshot 2" },
+      { src:"media/IMG_8324.png", caption:"Screenshot 3", alt:"FR-S screenshot 3" }
+    ];
+
+    // ---------- tiny helpers ----------
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const clampText = (s, max=60) => (s && s.length > max ? `${s.slice(0, max - 1)}…` : (s || ""));
+
+    // ---------- Gallery: base + uploads (localStorage) ----------
+    const UPLOADS_KEY = "frs_gallery_uploads_v1";
+
+    function safeParseJSON(raw, fallback){
+      try { return JSON.parse(raw); } catch { return fallback; }
+    }
+
+    function loadUploads(){
+      const raw = localStorage.getItem(UPLOADS_KEY);
+      const arr = safeParseJSON(raw, []);
+      if (!Array.isArray(arr)) return [];
+      return arr
+        .filter(x => x && typeof x.src === "string" && x.src.length > 0)
+        .map(x => ({
+          id: typeof x.id === "string" ? x.id : crypto.randomUUID(),
+          src: x.src,
+          caption: typeof x.caption === "string" ? x.caption : "Uploaded photo",
+          alt: typeof x.alt === "string" ? x.alt : "Uploaded gallery photo",
+          user: true
+        }));
+    }
+
+    function saveUploads(uploads){
+      const minimal = uploads.map(u => ({
+        id: u.id,
+        src: u.src,
+        caption: u.caption,
+        alt: u.alt,
+        user: true
+      }));
+      localStorage.setItem(UPLOADS_KEY, JSON.stringify(minimal));
+    }
+
+    function getAllPhotos(){
+      return [...BASE_PHOTOS, ...loadUploads()];
+    }
+
+    // ---------- Modal + lightbox ----------
+    const deckBtn = $("#deckButton");
+    const deckThumb = $("#deckThumb");
+    const photoCount = $("#photoCount");
+    const modal = $("#galleryModal");
+    const modalBackdrop = $("#modalBackdrop");
+    const modalClose = $("#modalClose");
+    const modalGrid = $("#modalGrid");
+    const lightbox = $("#lightbox");
+    const lightboxBackdrop = $("#lightboxBackdrop");
+    const lightboxClose = $("#lightboxClose");
+    const lightboxImg = $("#lightboxImg");
+
+    function openDialog(el){
+      el.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDialog(el){
+      el.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function openGallery(){
+      openDialog(modal);
+      modalClose.focus();
+    }
+
+    function closeGallery(){ closeDialog(modal); }
+    function closeLightbox(){ closeDialog(lightbox); }
+
+    function openLightboxByIndex(index){
+      const all = getAllPhotos();
+      const p = all[index];
+      if (!p) return;
+      lightboxImg.src = p.src;
+      lightboxImg.alt = p.alt;
+      openDialog(lightbox);
+      lightboxClose.focus();
+    }
+
+    function onKeyClose(e){
+      if (e.key !== "Escape") return;
+      if (lightbox.getAttribute("aria-hidden") === "false") closeLightbox();
+      else if (modal.getAttribute("aria-hidden") === "false") closeGallery();
+    }
+
+    function rebuildGalleryUI(){
+      const all = getAllPhotos();
+      photoCount.textContent = String(all.length);
+
+      deckThumb.innerHTML = "";
+      if (all.length > 0){
+        const img = document.createElement("img");
+        img.src = all[0].src;
+        img.alt = all[0].alt;
+        img.loading = "lazy";
+        deckThumb.appendChild(img);
+      }
+
+      modalGrid.innerHTML = "";
+      all.forEach((p, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", `Open ${p.caption}`);
+        const img = document.createElement("img");
+        img.src = p.src;
+        img.alt = p.alt;
+        img.loading = "lazy";
+        btn.appendChild(img);
+        btn.addEventListener("click", () => openLightboxByIndex(idx));
+        modalGrid.appendChild(btn);
+      });
+
+      renderUploadsPreview();
+    }
+
+    // ---------- Upload UI ----------
+    const uploadInput = $("#photoUpload");
+    const clearUploadsBtn = $("#clearUploads");
+    const uploadStatus = $("#uploadStatus");
+    const uploadsList = $("#uploadsList");
+
+    function renderUploadsPreview(){
+      if (!uploadsList) return;
+
+      const uploads = loadUploads();
+      uploadsList.innerHTML = "";
+
+      if (uploads.length === 0){
+        const p = document.createElement("p");
+        p.className = "muted";
+        p.textContent = "No uploaded photos yet.";
+        uploadsList.appendChild(p);
+        return;
+      }
+
+      uploads.forEach(u => {
+        const figure = document.createElement("figure");
+        figure.className = "shot frame";
+
+        const img = document.createElement("img");
+        img.src = u.src;
+        img.alt = u.alt;
+        img.loading = "lazy";
+
+        const cap = document.createElement("figcaption");
+        cap.textContent = clampText(u.caption, 40);
+
+        const actions = document.createElement("div");
+        actions.style.marginTop = "10px";
+
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "btn ghost";
+        del.textContent = "Remove";
+
+        del.addEventListener("click", () => {
+          const next = loadUploads().filter(x => x.id !== u.id);
+          saveUploads(next);
+          if (uploadStatus) uploadStatus.textContent = "Removed uploaded photo.";
+          rebuildGalleryUI();
+        });
+
+        actions.appendChild(del);
+
+        figure.appendChild(img);
+        figure.appendChild(cap);
+        figure.appendChild(actions);
+        uploadsList.appendChild(figure);
+      });
+    }
+
+    function readFileAsDataURL(file){
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ""));
+        reader.onerror = () => reject(new Error("Failed to read file."));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function handleUploadFiles(files){
+      const list = Array.from(files || []).filter(f => f && f.type && f.type.startsWith("image/"));
+      if (list.length === 0){
+        if (uploadStatus) uploadStatus.textContent = "No image files selected.";
+        return;
+      }
+
+      if (uploadStatus) uploadStatus.textContent = "Adding photos…";
+
+      const existing = loadUploads();
+      let added = 0;
+
+      for (const f of list){
+        try{
+          const dataUrl = await readFileAsDataURL(f);
+          if (!dataUrl) continue;
+
+          existing.push({
+            id: crypto.randomUUID(),
+            src: dataUrl,
+            caption: f.name || "Uploaded photo",
+            alt: `Uploaded photo: ${f.name || "image"}`,
+            user: true
+          });
+
+          saveUploads(existing);
+          added += 1;
+        } catch {
+          // skip
+        }
+      }
+
+      try{
+        saveUploads(existing);
+      } catch {
+        if (uploadStatus) uploadStatus.textContent = "Storage full. Try fewer/smaller images.";
+        return;
+      }
+
+      if (uploadStatus) uploadStatus.textContent = added ? `Added ${added} photo(s).` : "Nothing added.";
+      if (uploadInput) uploadInput.value = "";
+      rebuildGalleryUI();
+    }
+
+    uploadInput?.addEventListener("change", (e) => {
+      const files = e.target?.files;
+      handleUploadFiles(files);
+    });
+
+    clearUploadsBtn?.addEventListener("click", () => {
+      localStorage.removeItem(UPLOADS_KEY);
+      if (uploadStatus) uploadStatus.textContent = "Cleared uploaded photos.";
+      rebuildGalleryUI();
+    });
+
+    // ---------- Link-ups (saved as a class) ----------
+    class LinkUpPlan{
+      constructor({ id, datetimeLocal, activities, createdAt }){
+        this.id = id || crypto.randomUUID();
+        this.datetimeLocal = datetimeLocal;
+        this.activities = Array.isArray(activities) ? activities : [];
+        this.createdAt = createdAt || new Date().toISOString();
+      }
+
+      get prettyTime(){
+        try{
+          const d = new Date(this.datetimeLocal);
+          if (!Number.isFinite(d.getTime())) return this.datetimeLocal;
+          return d.toLocaleString();
+        } catch {
+          return this.datetimeLocal;
+        }
+      }
+
+      toJSON(){
+        return {
+          id: this.id,
+          datetimeLocal: this.datetimeLocal,
+          activities: this.activities,
+          createdAt: this.createdAt
+        };
+      }
+
+      static fromJSON(obj){
+        return new LinkUpPlan(obj);
+      }
+    }
+
+    const STORAGE_KEY = "frs_linkups_v1";
+    const form = $("#linkUpForm");
+    const status = $("#planStatus");
+    const plansList = $("#plansList");
+    const clearPlansBtn = $("#clearPlans");
+
+    function loadPlans(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const parsed = safeParseJSON(raw, []);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.map(LinkUpPlan.fromJSON);
+    }
+
+    function savePlans(plans){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(plans.map(p => p.toJSON())));
+    }
+
+    function renderPlans(){
+      const plans = loadPlans().sort((a, b) => a.datetimeLocal.localeCompare(b.datetimeLocal));
+      plansList.innerHTML = "";
+
+      if (plans.length === 0){
+        const empty = document.createElement("p");
+        empty.className = "muted";
+        empty.textContent = "No link ups saved yet.";
+        plansList.appendChild(empty);
+        return;
+      }
+
+      plans.forEach(p => {
+        const wrap = document.createElement("div");
+        wrap.className = "card frame";
+
+        const title = document.createElement("h3");
+        title.textContent = p.prettyTime;
+
+        const acts = document.createElement("p");
+        acts.className = "muted";
+        acts.textContent = p.activities.length ? `Activities: ${p.activities.join(", ")}` : "Activities: (none selected)";
+
+        const actions = document.createElement("div");
+        actions.className = "form-actions";
+
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "btn ghost";
+        del.textContent = "Delete";
+
+        del.addEventListener("click", () => {
+          const next = loadPlans().filter(x => x.id !== p.id);
+          savePlans(next);
+          renderPlans();
+          status.textContent = "Deleted.";
+        });
+
+        actions.appendChild(del);
+        wrap.appendChild(title);
+        wrap.appendChild(acts);
+        wrap.appendChild(actions);
+        plansList.appendChild(wrap);
+      });
+    }
+
+    function getCheckedActivities(){
+      return Array.from(document.querySelectorAll('input[name="activity"]:checked')).map(x => x.value);
+    }
+
+    function clearChecks(){
+      document.querySelectorAll('input[name="activity"]').forEach(x => x.checked = false);
+    }
+
+    // init
+    rebuildGalleryUI();
+    renderPlans();
+
+    deckBtn?.addEventListener("click", openGallery);
+    modalBackdrop?.addEventListener("click", closeGallery);
+    modalClose?.addEventListener("click", closeGallery);
+
+    lightboxBackdrop?.addEventListener("click", closeLightbox);
+    lightboxClose?.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", onKeyClose);
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const dt = $("#linkup-dt").value;
+      if (!dt){
+        status.textContent = "Pick a date and time first.";
+        return;
+      }
+
+      const activities = getCheckedActivities();
+      const plan = new LinkUpPlan({ datetimeLocal: dt, activities });
+
+      const plans = loadPlans();
+      plans.push(plan);
+      savePlans(plans);
+
+      form.reset();
+      clearChecks();
+      renderPlans();
+      status.textContent = "Saved.";
+    });
+
+    clearPlansBtn?.addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY);
+      renderPlans();
+      status.textContent = "Cleared all saved link ups.";
+    });
+  </script>
+
 </body>
 </html>
