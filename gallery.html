@@ -1,0 +1,138 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My 2013 Scion FR-S | Gallery </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">FR-S Story</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History of the 86/FRS/BRZ platform</a></li>
+        <li><a href="passion.html">My Car Journey</a></li>
+        <li><a class="active" href="gallery.html">Gallery + Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="page-head frame">
+      <h1>Gallery</h1>
+      <p class="lead">
+        Click to view my car's photo gallery.
+      </p>
+    </section>
+
+    <section class="deck-wrap frame" aria-label="Gallery deck">
+      <button id="deckButton" class="deck" type="button" aria-label="Open your photo deck">
+        <div class="deck-stack" aria-hidden="true">
+          <div class="deck-card deck-card-3"></div>
+          <div class="deck-card deck-card-2"></div>
+          <div class="deck-card deck-card-1"></div>
+        </div>
+
+        <div class="deck-preview">
+          <div class="deck-thumb frame" id="deckThumb" aria-hidden="true"></div>
+          <div class="deck-meta">
+            <p class="deck-title">My FR-S Gallery</p>
+            <p class="deck-sub muted">
+              <span id="photoCount">0</span> photos saved
+            </p>
+            <p class="micro">Click to view all</p>
+          </div>
+        </div>
+      </button>
+    </section>
+
+    <!-- Form section -->
+    <section class="card frame">
+      <h2>Meet planner + photo upload</h2>
+      <p class="muted">
+        Pick a date for the next meet. Upload photos and they will appear in your gallery deck.
+        This saves on this browser using local storage.
+      </p>
+
+      <form class="form" id="meetForm" action="#" method="post">
+        <div class="form-row">
+          <label for="meet-date">Next car meet date</label>
+          <input id="meet-date" name="meet-date" type="date" />
+          <p class="micro">Your selected date will be remembered on this device.</p>
+        </div>
+
+        <div class="form-row">
+          <label for="photo-upload">Upload car photos</label>
+          <input id="photo-upload" name="photo-upload" type="file" accept="image/*" multiple />
+          <p class="micro">Tip: hold Ctrl or Cmd to select multiple images.</p>
+        </div>
+
+        <div class="form-row checkbox-row">
+          <input id="notify" name="notify" type="checkbox" />
+          <label for="notify">Remind me on the day (visual reminder only)</label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit" aria-label="Save meet date">
+            Save meet date
+          </button>
+          <button class="btn ghost" id="clearUploads" type="button" aria-label="Clear uploaded photos">
+            Clear uploaded photos
+          </button>
+        </div>
+
+        <p class="micro" id="statusMsg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal that opens to show all photos -->
+  <div class="modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-panel frame" role="dialog" aria-modal="true" aria-label="Full gallery">
+      <div class="modal-head">
+        <h2 class="modal-title">All photos</h2>
+        <button class="btn ghost modal-close" id="modalClose" type="button" aria-label="Close gallery">
+          Close
+        </button>
+      </div>
+
+      <div class="modal-tools">
+        <p class="muted">Click any photo to view it larger.</p>
+      </div>
+
+      <div class="modal-grid" id="modalGrid"></div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-panel frame" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="btn ghost lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">
+        Close
+      </button>
+      <img id="lightboxImg" alt="Selected gallery photo" />
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Comp 484 • Project 1 • My Car &lt;3</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
